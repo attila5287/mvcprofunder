@@ -19,8 +19,28 @@
     {{pro.description}}
     <i class="fas fa-quote-right text-2xl fa-pull-right text-primary opac-70"></i>
   </p>
+  <div class="progress bg-secondary p-0 my-4">
+  <div
+    class="progress-bar progress-bar-striped progress-bar-animated"
+    style="width:
+      {{calculate_progress pro.needed_funding pro.collected_funding}}
+      %"
+    role="progressbar"
+    aria-valuenow="{{calculate_progress pro.needed_funding pro.collected_funding
+      }}"
+    aria-valuemin="0"
+    aria-valuemax="100"
+  >
+    <div class="ml-5 text-reg text-dark text-center">
+      <b>
+        {{calculate_progress pro.needed_funding pro.collected_funding}}
+        %
+      </b>
+    </div>
+  </div>
+</div>
   <button
-    class="btn btn-outline-success btn-block opac-70 mb-4"
+    class="btn btn-outline-success border-0 btn-block opac-70 mb-4"
     data-target="#pro_fund{{pro.id}}"
     data-toggle="collapse"
     aria-expanded="false"
@@ -46,27 +66,7 @@
         </i>
       </span>
     </div>
-    <div class="progress bg-secondary p-0 my-4">
-      <div
-        class="progress-bar progress-bar-striped progress-bar-animated"
-        style="width:
-          {{calculate_progress pro.needed_funding pro.collected_funding}}%"
-        role="progressbar"
-        aria-valuenow="{{calculate_progress
-            pro.needed_funding
-            pro.collected_funding
-          }}"
-        aria-valuemin="0"
-        aria-valuemax="100"
-      >
-        <div class="ml-5 text-reg text-dark text-center">
-          <b>
-            {{calculate_progress pro.needed_funding pro.collected_funding}}
-            %
-          </b>
-        </div>
-      </div>
-    </div>
+
     <div class="d-flex flex-row justify-content-around opac-70 mb-2">
       <button class="btn btn-outline-success border-0" type="button">
         <i class="fas fa-donate"></i>
@@ -91,7 +91,7 @@
     </div>
   </div>
   <button
-    class="btn btn-outline-info btn-block mb-4"
+    class="btn btn-outline-info btn-block border-0 mb-4"
     data-target="#pro_user{{pro.id}}"
     data-toggle="collapse"
     aria-expanded="false"
