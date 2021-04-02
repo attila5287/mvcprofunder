@@ -17,10 +17,24 @@ router.get('/', async (req, res) => {
   const all = proData.map((p) => p.get({ plain: true }));
   // We render the template, 'all', passing in dishes, a new array of serialized objects.
   // res.status(200).json(all);
-  res.render('all', { all });
+  res.render('all', { all, loggedIn: req.session.loggedIn, });
 });
 
-router.get('/r', async (req, res) => {
+
+// Login route from ex 16
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  // Otherwise, render the 'login' template
+  res.render('login');
+});
+
+
+
+router.get('/pros', async (req, res) => {
   try {
     const pros = await Project.findAll({ include: { all: true } });
     // res.status( 200 ).json( pros );

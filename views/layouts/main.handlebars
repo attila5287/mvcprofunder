@@ -18,11 +18,21 @@
   </head>
 
   <style>
+.form-control-dark {
+  color: #fff;
+  background-color: rgba(255, 255, 255, .1);
+  border-color: rgba(255, 255, 255, .1);
+}
+
+.form-control-dark:focus {
+  border-color: transparent;
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
     .mini {
       width: 100%;
       margin: auto;
-      max-width: 736px;
-      padding: 4px;
+      max-width: 576px;
+      padding:1rem 1rem 1rem 1rem;
     }
     .text-sm {
       font-size: 0.80rem;
@@ -89,14 +99,19 @@
             <i class="fas fa-home"></i>
             Projects</a
           >
-          <a class="nav-item nav-link" href="/login">
-            <i class="fas fa-sign-in-alt"></i>
-            Login</a
-          >
+          {{#if loggedIn}}
           <a class="nav-item nav-link" href="/logout">
             <i class="fas fa-sign-out-alt"></i>
             Logout</a
           >
+          {{else}}
+          <a class="nav-item nav-link" href="/users">
+            <i class="fas fa-sign-in-alt"></i>
+            Login</a
+          >
+          {{/if}}
+
+
           <a class="nav-item nav-link" href="/profile">
             <i class="fas fa-users-cog"></i>
             Profile</a
