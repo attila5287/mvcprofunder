@@ -1,0 +1,22 @@
+{{#each all as |pro|}}
+<h2>
+    <i class="fas fa-rocket"></i>
+    {{pro.name}}
+</h2>
+<p class="text-light">
+{{pro.description}}
+</p>
+
+<button class="btn btn-outline-primary btn-block" data-target="#user{{pro.user_id}}" data-toggle="collapse" aria-expanded="false" aria-controls="user{{pro.user_id}}">
+    <i class="fas fa-chevron-down"></i>
+    Show User Details
+</button>
+<div id="user{{pro.user_id}}" class="collapse container-fluid">
+    <h4>
+    {{pro.user.name}}  
+
+    </h4>
+    {{pro.user.email}}
+</div> 
+
+{{/each}}
