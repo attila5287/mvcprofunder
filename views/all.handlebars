@@ -10,7 +10,7 @@
             </span>
             <span>
             <i class="fas fa-money-check-alt"></i>
-             Needed: {{pro._funding}}
+             Collected: {{pro.collected_funding}}
             </span>
         </i>
     </span>
@@ -18,7 +18,31 @@
 <p class="font-italic">
 {{pro.description}}
 </p>
+<p class="font-italic">
 
+</p>
+
+<div class="progress mb-2">
+      <div
+        class="progress-bar bg-primary"
+        style="width: {{calculate_progress pro.needed_funding pro.collected_funding}}%"
+        role="progressbar"
+        aria-valuenow="{{calculate_progress pro.needed_funding pro.collected_funding}}"
+        aria-valuemin="0"
+        aria-valuemax="100"
+      >
+      <span class="text-light">
+          <b>
+              <i>
+        {{calculate_progress pro.needed_funding pro.collected_funding}}% funded
+
+              </i>
+
+          </b>
+
+      </span>
+      </div>
+    </div>
 <button class="btn btn-outline-primary btn-block" data-target="#user{{pro.user_id}}" data-toggle="collapse" aria-expanded="false" aria-controls="user{{pro.user_id}}">
     <i class="fas fa-chevron-down"></i>
     Show User Details
@@ -30,5 +54,5 @@
     </h4>
     {{pro.user.email}}
 </div> 
-
+<hr class="my-4 border-primary">
 {{/each}}

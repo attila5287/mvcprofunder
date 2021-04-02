@@ -1,8 +1,8 @@
 {
   "singleQuote": true,
-    "overrides": [
+  "overrides": [
     {
-      "files": "*.hbs",
+      "files": "*.handlebars",
       "options": {
         "singleQuote": false
       }
