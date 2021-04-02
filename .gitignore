@@ -113,3 +113,5 @@ views_16/painting.handlebars
 views_16/layouts/main.handlebars
 views_16/partials/gallery-details.handlebars
 views_16/partials/painting-details.handlebars
+views/layouts/main.html
+server copy.js
