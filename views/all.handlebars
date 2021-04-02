@@ -1,58 +1,68 @@
 {{#each all as |pro|}}
-<h2>
+<h2 class="text-primary">
     <i class="fas fa-rocket"></i>
     {{pro.name}}
-    <span class="float-right">
-        <i class="text-reg">
-            <span>
-            <i class="fas fa-money-check-alt"></i>
-             Needed: {{pro.needed_funding}}
-            </span>
-            <span>
-            <i class="fas fa-money-check-alt"></i>
-             Collected: {{pro.collected_funding}}
-            </span>
-        </i>
-    </span>
 </h2>
-<p class="font-italic">
-{{pro.description}}
+<div class="d-flex flex-row justify-content-around text-success">
+        <span>
+            <i class="fas fa-money-check-alt text-xl"></i>
+            Needed: {{format_amount pro.needed_funding}}
+        </span>
+        <span>
+            <i class="fas fa-hand-holding-usd text-xl"></i>
+            Collected: {{format_amount pro.collected_funding}}
+        </span>
+</div>
+<p class="font-italic text-secondary py-1">
+    <i class="fas fa-file-alt text-xl fa-pull-left"></i>
+    {{pro.description}}
 </p>
-<p class="font-italic">
 
-</p>
-
-<div class="progress mb-2">
-      <div
-        class="progress-bar bg-primary"
+<div class="progress bg-secondary p-0 my-4">
+    <div class="progress-bar  progress-bar-striped progress-bar-animated"
         style="width: {{calculate_progress pro.needed_funding pro.collected_funding}}%"
         role="progressbar"
         aria-valuenow="{{calculate_progress pro.needed_funding pro.collected_funding}}"
-        aria-valuemin="0"
-        aria-valuemax="100"
-      >
-      <span class="text-light">
-          <b>
-              <i>
-        {{calculate_progress pro.needed_funding pro.collected_funding}}% funded
-
-              </i>
-
-          </b>
-
-      </span>
-      </div>
+        aria-valuemin="0" aria-valuemax="100">
+        <div class="text-lg text-dark text-center">
+            <b>
+                {{calculate_progress pro.needed_funding pro.collected_funding}}%
+            </b>
+        </div>
     </div>
-<button class="btn btn-outline-primary btn-block" data-target="#user{{pro.user_id}}" data-toggle="collapse" aria-expanded="false" aria-controls="user{{pro.user_id}}">
+</div>
+<div class="d-flex flex-row justify-content-around opac-70 mb-2">
+    <button class="btn btn-outline-success border-0" type="button">
+        <i class="fas fa-donate"></i>5
+    </button>
+    <button class="btn btn-outline-success border-0" type="button">
+        <i class="fas fa-donate"></i>10
+    </button>
+    <button class="btn btn-outline-success border-0" type="button">
+        <i class="fas fa-donate"></i>20
+    </button>
+    <button class="btn btn-outline-success border-0" type="button">
+        <i class="fas fa-donate"></i>50
+    </button>
+    <button class="btn btn-outline-success border-0" type="button">
+        <i class="fas fa-donate"></i>100
+    </button>
+</div>
+<button class="btn btn-outline-primary border-0 btn-block" data-target="#pro{{pro.id}}"
+    data-toggle="collapse" aria-expanded="false" aria-controls="pro{{pro.id}}">
     <i class="fas fa-chevron-down"></i>
-    Show User Details
+    Show/Hide User Details
 </button>
-<div id="user{{pro.user_id}}" class="collapse container-fluid">
-    <h4>
-    {{pro.user.name}}  
-
-    </h4>
-    {{pro.user.email}}
-</div> 
-<hr class="my-4 border-primary">
+<div id="pro{{pro.id}}" class="collapse show my-2 border-light">
+    <h1 class="text-primary">
+        <i class="fas fa-user"></i>
+        {{pro.user.name}}
+    </h1>
+    <a class="text-secondary text-lg">
+        <i class="far fa-envelope text-xl mr-3"></i>
+        
+        {{pro.user.email}}
+    </a>
+</div>
+<hr class="my-4 border-dark border-med">
 {{/each}}
