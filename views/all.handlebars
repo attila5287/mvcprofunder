@@ -1,17 +1,26 @@
+<blockquote class="blockquote">
+  <p class="text-reg text-secondary text-center font-italic mb-0">
+    <i class="text-xl fas fa-cog fa-spin"></i>
+    List of active projects waiting to be funded, click on buttons to see funding status or contact info:
+  </p>
+</blockquote>
 {{#each all as |pro|}}
   <h1 class="title text-primary">
     <i class="fas fa-rocket text-dark bg-primary p-2 rounded-xl opac-50"></i>
     <u>
     {{pro.name}}
     </u>
+    <span class="mt-4 float-right font-italic text-reg text-secondary opac-70">
+    <i class="fas fa-calendar-check text-xl"></i>
+        Created at {{format_date pro.date_created}}</span>
   </h1>
   <p class="font-italic text-secondary text-lg my-4 mr-5">
-    <i class="fas fa-quote-left text-2xl fa-pull-left text-primary"></i>
-    <i class="fas fa-quote-right text-2xl fa-pull-right text-primary"></i>
+    <i class="fas fa-quote-left text-2xl fa-pull-left text-primary opac-70"></i>
     {{pro.description}}
+    <i class="fas fa-quote-right text-2xl fa-pull-right text-primary opac-70"></i>
   </p>
   <button
-    class="btn btn-outline-success btn-block opac-70 my-4"
+    class="btn btn-outline-success btn-block opac-70 mb-4"
     data-target="#pro_fund{{pro.id}}"
     data-toggle="collapse"
     aria-expanded="false"
@@ -82,14 +91,14 @@
     </div>
   </div>
   <button
-    class="btn btn-outline-info btn-block"
+    class="btn btn-outline-info btn-block mb-4"
     data-target="#pro_user{{pro.id}}"
     data-toggle="collapse"
     aria-expanded="false"
     aria-controls="pro_user{{pro.id}}"
   >
     <i class="fas fa-chevron-down"></i>
-    Show/Hide User Info
+    Show/Hide Contact Info
   </button>
   <div id="pro_user{{pro.id}}" class="collapse">
     <h1 class="text-info">
