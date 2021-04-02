@@ -102,3 +102,14 @@ dist
 
 # TernJS port file
 .tern-port
+README.md
+views_pro/homepage.handlebars
+views_pro/login.handlebars
+views_pro/layouts/main.handlebars
+views_16/gallery.handlebars
+views_16/homepage.handlebars
+views_16/login.handlebars
+views_16/painting.handlebars
+views_16/layouts/main.handlebars
+views_16/partials/gallery-details.handlebars
+views_16/partials/painting-details.handlebars
