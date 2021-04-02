@@ -115,3 +115,11 @@ views_16/partials/gallery-details.handlebars
 views_16/partials/painting-details.handlebars
 views/layouts/main.html
 server copy.js
+controllers copy/home-routes.js
+controllers copy/index.js
+controllers copy/api/index.js
+controllers copy/api/user-routes.js
+controllers copy 2/home-routes.js
+controllers copy 2/index.js
+controllers copy 2/api/index.js
+controllers copy 2/api/user-routes.js
