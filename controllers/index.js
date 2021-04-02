@@ -32,6 +32,17 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Login route from ex 16
+router.get('/newproject', (req, res) => {
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.loggedIn) {
+    res.redirect('/');
+    return;
+  }
+  // Otherwise, render the 'login' template
+  res.render('newproject');
+});
+
 
 
 router.get('/pros', async (req, res) => {
