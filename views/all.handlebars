@@ -2,8 +2,20 @@
 <h2>
     <i class="fas fa-rocket"></i>
     {{pro.name}}
+    <span class="float-right">
+        <i class="text-reg">
+            <span>
+            <i class="fas fa-money-check-alt"></i>
+             Needed: {{pro.needed_funding}}
+            </span>
+            <span>
+            <i class="fas fa-money-check-alt"></i>
+             Needed: {{pro._funding}}
+            </span>
+        </i>
+    </span>
 </h2>
-<p class="text-light">
+<p class="font-italic">
 {{pro.description}}
 </p>
 
