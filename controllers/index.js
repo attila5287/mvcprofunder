@@ -43,7 +43,10 @@ router.get('/projects/:id', withAuth, async (req, res) => {
   // res.json( pro.get( { plain: true } ) );
 
   const pro = pro_model.get( { plain: true } )
-  res.render('project', {pro, logged_in : req.session.logged_in, user_id : req.session.user_id})
+
+  const user_model = await User.findByPk( req.session.user_id ).catch( e => console.log( e ) );
+  const user = user_model.get( { plain: true } );
+  res.render('project', {pro, user, logged_in : req.session.logged_in, user_id : req.session.user_id})
 
 });
 
