@@ -9,7 +9,7 @@
       content="mini project for MVC express-handlebars"
     />
     <!-- no need to use /public  -->
-    <link rel="stylesheet" href="/journal/bootstrap.css" />
+    <link rel="stylesheet" href="/css/journal/bootstrap.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
@@ -104,6 +104,10 @@
             New</a
           >
           {{#if logged_in}}
+          <a class="nav-item nav-link disabled text-sm" >
+            <i class="fas fa-user-circle"></i>
+            currently logged in</a
+          >
           <a class="nav-item nav-link">
             <form  method="POST" action="/api/users/logout" class="text-nowrap">
             <i class="fas fa-sign-out-alt"></i>

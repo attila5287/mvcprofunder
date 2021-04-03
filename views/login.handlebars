@@ -1,4 +1,4 @@
-<form method="POST" action="/api/users" class="text-primary text-xl font-italic">
+<form class="signup-form text-primary text-xl font-italic p-5 mx-5">
   <div class="form-group">
     <h1>
       <i class="title fas fa-user-plus bg-primary text-dark p-1 rounded-xl"></i>
@@ -8,26 +8,26 @@
     </h1>
   </div>
   <div class="form-group">
-    <label for="name">
+    <label for="name-signup">
       <i class="fas fa-user"></i>
       Name
     </label>
-    <input class="form-control form-control-lg form-control-dark" type="text" name="name" placeholder="Type username here"  />
+    <input class="form-control form-control-lg form-control-dark" type="text" name="name" id="name-signup" placeholder="Type username here"  />
   </div>
 
   <div class="form-group">
-    <label for="email">
+    <label for="email-signup">
       <i class="fas fa-envelope"></i>
       Email
     </label>
-    <input class="form-control form-control-lg form-control-dark" type="email" name="email" placeholder="Type email here..."/>
+    <input class="form-control form-control-lg form-control-dark" type="email" name="email" id="email-signup" placeholder="Type email here..."/>
   </div>
   <div class="form-group">
-    <label for="password">
+    <label for="password-signup">
       <i class="fas fa-key"></i>
       Password
     </label>
-    <input class="form-control form-control-lg form-control-dark" type="password" name="password" placeholder="Type password here..."/>
+    <input class="form-control form-control-lg form-control-dark" type="password" name="password" id="password-signup" placeholder="Type password here..."/>
   </div>
   <div class="form-group">
     <input class="btn btn-primary btn-block btn-lg" type="submit"  value="Create account"/>
@@ -36,9 +36,7 @@
 </form>
 
 <form
-  method="POST"
-  action="/api/users/login"
-  class="text-info text-xl font-italic"
+  class="login-form text-info text-xl font-italic p-5 mx-5"
 >
   <div class="form-group">
     <h1>
@@ -49,24 +47,26 @@
     </h1>
   </div>
   <div class="form-group">
-    <label for="email">
+    <label for="email-login">
       <i class="fas fa-envelope"></i>
       Email
     </label>
     <input
       class="form-control form-control-lg form-control-dark"
+      id="email-login"
       type="email"
       name="email"
       placeholder="Type email here..."
     />
   </div>
   <div class="form-group">
-    <label for="password">
+    <label for="password-login">
       <i class="fas fa-key"></i>
       Password
     </label>
     <input
       class="form-control form-control-lg form-control-dark"
+      id="password-login"
       type="password"
       name="password"
       placeholder="Type password here..."
@@ -80,3 +80,4 @@
     />
   </div>
 </form>
+<script src="/js/login.js"></script>

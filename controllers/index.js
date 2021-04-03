@@ -1,4 +1,5 @@
-const path = require('path');
+const withAuth = require('../utils/auth');
+const path = require( 'path' );
 const router = require('express').Router();
 const apiRoutes = require('./api');
 const { Project, User } = require('../models');
@@ -21,25 +22,17 @@ router.get('/', async (req, res) => {
 });
 
 
-// Login route from ex 16
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect to the homepage
   if (req.session.loggedIn) {
     res.redirect('/');
     return;
   }
-  // Otherwise, render the 'login' template
+
   res.render('login');
 });
 
-// Login route from ex 16
+
 router.get('/newproject', (req, res) => {
-  // If the user is already logged in, redirect to the homepage
-  if (req.session.loggedIn) {
-    res.redirect('/');
-    return;
-  }
-  // Otherwise, render the 'login' template
   res.render('newproject');
 });
 

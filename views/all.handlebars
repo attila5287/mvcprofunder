@@ -5,6 +5,7 @@
   </p>
 </blockquote>
 {{#each all as |pro|}}
+<div class="container-fluid pt-4">
   <h1 class="title text-primary">
     <i class="fas fa-rocket text-dark bg-primary p-2 rounded-xl opac-50"></i>
     <u>
@@ -30,10 +31,9 @@
     aria-valuemin="0"
     aria-valuemax="100"
   >
-    <div class="ml-5 text-reg text-dark text-center">
+    <div class="ml-1 text-reg text-dark text-center">
       <b>
-        {{calculate_progress pro.needed_funding pro.collected_funding}}
-        %
+        {{calculate_progress pro.needed_funding pro.collected_funding}}%
       </b>
     </div>
   </div>
@@ -110,4 +110,6 @@
     </a>
   </div>
   <hr class="my-4 border-dark border-med" />
+
+</div>
 {{/each}}
