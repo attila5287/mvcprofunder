@@ -16,6 +16,7 @@ const signupFormHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/');
       console.log('\n >> RESPONSE OK \n');
+      alert('Refresh the page to unlock user features!');
     } else {
       alert('Failed to sign up.');
     }

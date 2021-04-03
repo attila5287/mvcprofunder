@@ -14,6 +14,7 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       console.log('\n >> RESPONSE OK \n');
       document.location.replace('/');
+      alert('Refresh the page to unlock user features!');
     } else {
       alert('Failed to log in.');
     }
