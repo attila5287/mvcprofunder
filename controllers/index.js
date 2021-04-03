@@ -56,25 +56,6 @@ router.get('/profile/:id',withAuth, async (req, res) => {
   res.render('profile', {user,  logged_in: req.session.logged_in, user_id: req.session.user_id,});
 });
 
-// GET a single reader
-router.get('/:id', async (req, res) => {
-  try {
-    const readerData = await Reader.findByPk(req.params.id, {
-      // Add Book as a second model to JOIN with
-      include: [{ model: LibraryCard }, { model: Book }],
-    });
-
-    if (!readerData) {
-      res.status(404).json({ message: 'No reader found with that id!' });
-      return;
-    }
-
-    res.status(200).json(readerData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-
 
 router.get('/pros', async (req, res) => {
   try {
