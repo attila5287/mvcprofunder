@@ -35,7 +35,7 @@ router.get( '/login', ( req, res ) => {
 });
 
 router.get('/new_project', withAuth, (req, res) => {
-  res.render('new_project',{ logged_in: req.session.logged_in});
+  res.render('new_project',{ logged_in: req.session.logged_in, user_id: req.session.user_id,});
 });
 
 
@@ -53,7 +53,7 @@ router.get('/profile/:id',withAuth, async (req, res) => {
 
   // We render the template, 'all', passing in dishes, a new array of serialized objects.
   // res.status(200).json(all);
-  res.render('profile', {user,  logged_in: req.session.logged_in});
+  res.render('profile', {user,  logged_in: req.session.logged_in, user_id: req.session.user_id,});
 });
 
 // GET a single reader

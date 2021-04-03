@@ -17,9 +17,6 @@
 
 <hr class="border-primary border-med">
 {{#each user.projects as |pro|}}
-<button class="btn btn-danger btn-sm del-btn" type="button" id="user_project_{{pro.id}}">
-  Delete
-</button>
 <div class="container-fluid pt-4">
   <h1 class="title text-primary">
     <i class="fas fa-rocket text-dark bg-primary p-2 rounded-xl opac-50"></i>
@@ -29,6 +26,10 @@
     <span class="mt-4 float-right font-italic text-reg text-secondary opac-70">
     <i class="fas fa-calendar-check text-xl"></i>
         Created at {{format_date pro.date_created}}</span>
+<button class="btn btn-outline-danger btn-sm del-btn text-sm" type="button" id="user_project_{{pro.id}}">
+  <i class="fas fa-times"></i>
+</button>
+
   </h1>
   <p class="font-italic text-secondary text-lg my-4 mr-5">
     <i class="fas fa-quote-left text-2xl fa-pull-left text-primary opac-70"></i>
@@ -109,4 +110,3 @@
 
 </div>
 {{/each}}
-

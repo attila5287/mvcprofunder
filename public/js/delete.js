@@ -6,9 +6,10 @@ document.querySelector( '.del-btn' )
       method: 'DELETE',
     });
 
-    if (response.ok) {
-      console.log('\n >> RESPONSE OK \n');
-      alert('Deleted project.');
+    if ( response.ok ) {
+        console.log('\n >> RESPONSE OK \n');
+        alert('Deleted project.');
+        location.reload()
     } else {
       alert('Failed to delete project.');
     }
