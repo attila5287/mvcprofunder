@@ -103,9 +103,9 @@
             <i class="fas fa-home"></i>
             Projects</a>
           {{#if logged_in}}
-          <a class="nav-item nav-link disabled text-dark text-lg font-italic ml-5">
-            <i class="fas fa-user-circle text-xl"></i>
-            currently logged in:</a>
+          <a class="nav-item nav-link disabled text-dark text-reg font-italic ml-5">
+            <i class="fas fa-user-circle text-lg"></i>
+            logged in as user#{{user_id}}</a>
           <a class="nav-item nav-link" href="/profile/{{user_id}}">
             <i class="fas fa-user-cog"></i>
             Profile</a>
@@ -117,7 +117,7 @@
             <form method="POST" action="/api/users/logout" class="text-nowrap">
               <i class="fas fa-sign-out-alt"></i>
               <input type="submit" value="Logout"
-                class="btn btn-sm btn-primary border-0 text-dark opac-70 font-italic font-weight-bold text-reg pl-0 pr-5">
+                class="btn btn-sm btn-primary border-0 opac-70 font-italic font-weight-bold text-sm pl-0 pr-5">
             </form>
           </a>
 
