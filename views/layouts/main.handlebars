@@ -1,140 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta
-      name="Description"
-      content="mini project for MVC express-handlebars"
-    />
+    <meta name="Description" content="mini project for MVC express-handlebars" />
     <!-- no need to use /public  -->
     <link rel="stylesheet" href="/css/journal/bootstrap.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
-    />
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <title>MVC mini-Project: Crowd Funder</title>
   </head>
 
   <style>
-.form-control-dark {
-  color: #fff;
-  background-color: rgba(255, 255, 255, .1);
-  border-color: rgba(255, 255, 255, .1);
-}
+    .bg-body {
+      background-color: #222;
+    }
 
-.form-control-dark:focus {
-  border-color: transparent;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
-}
+    .form-control-dark {
+      color: #fff;
+      background-color: rgba(255, 255, 255, .1);
+      border-color: rgba(255, 255, 255, .1);
+    }
+
+    .form-control-dark:focus {
+      border-color: transparent;
+      box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+    }
+
     .mini {
       width: 100%;
       margin: auto;
       max-width: 576px;
-      padding:1rem 1rem 1rem 1rem;
+      padding: 1rem 1rem 1rem 1rem;
     }
+
     .text-sm {
       font-size: 0.80rem;
     }
+
     .text-reg {
       font-size: 1.0rem;
     }
+
     .text-lg {
       font-size: 1.25rem;
     }
+
     .text-xl {
       font-size: 1.5rem;
     }
+
     .text-2xl {
       font-size: 2rem;
     }
+
     .rounded-xl {
       border-radius: 0.5rem;
     }
+
     .rounded-up {
       border-radius: 1.5rem;
     }
-  .border-med{
-    border-width: 0.15rem;
-  border-radius: 0.5rem;
-  }
-  .opac-50 {
-    opacity: 70%;
-  }
-  .opac-70 {
-    opacity: 70%;
-  }
-  .title {
-    font-size: 4rem;
-  }
+
+    .border-med {
+      border-width: 0.15rem;
+      border-radius: 0.5rem;
+    }
+
+    .opac-50 {
+      opacity: 70%;
+    }
+
+    .opac-70 {
+      opacity: 70%;
+    }
+
+    .title {
+      font-size: 4rem;
+    }
   </style>
 
-  <body class="bg-dark">
+  <body class="bg-body">
     <header>
       <nav class="navbar navbar-expand navbar-dark bg-primary py-0 my-0">
         <div class="nav navbar-nav align-items-center">
-          <a
-            class="navbar-brand"
-            href="https://github.com/attila5287/mvcprofunder"
-          >
-            <img
-              alt="@attila5287"
+          <a class="navbar-brand" href="https://github.com/attila5287/mvcprofunder">
+            <img alt="@attila5287"
               src="https://avatars1.githubusercontent.com/u/42498753?s=60&amp;u=739973fd70454aa533c67bccf17b6aeddcc6361f&amp;v=4"
-              class="rounded-xl my-0 py-0"
-              width="36"
-              height="36"
-            />
+              class="rounded-xl my-0 py-0" width="36" height="36" />
           </a>
           <a class="nav-item nav-link" href="https://mvcprofunder.herokuapp.com">
             <i class="text-xl fas fa-rocket text-dark"></i>
             <b>
               <i class="text-dark">
-              MVCProFunder
+                MVCProFunder
               </i>
             </b>
-            </a
-          >
+          </a>
           <a class="nav-item nav-link" href="/">
             <i class="fas fa-home"></i>
-            Projects</a
-          >
+            Projects</a>
+          {{#if logged_in}}
+          <a class="nav-item nav-link disabled text-dark text-lg font-italic ml-5">
+            <i class="fas fa-user-circle text-xl"></i>
+            currently logged in:</a>
+          <a class="nav-item nav-link" href="/profile/{{user_id}}">
+            <i class="fas fa-user-cog"></i>
+            Profile</a>
           <a class="nav-item nav-link" href="/new_project">
             <i class="fas fa-upload"></i>
-            New</a
-          >
-          {{#if logged_in}}
-          
-          <a class="nav-item nav-link disabled text-dark text-lg font-italic ml-5" >
-            <i class="fas fa-user-circle text-xl"></i>
-            currently logged in:</a
-          >
+            New</a>
+
           <a class="nav-item nav-link">
-            <form  method="POST" action="/api/users/logout" class="text-nowrap">
-            <i class="fas fa-sign-out-alt"></i>
-            <input type="submit" value="Logout" class="btn btn-sm btn-primary border-0 text-dark opac-70 font-italic font-weight-bold text-reg pl-0 pr-5">
+            <form method="POST" action="/api/users/logout" class="text-nowrap">
+              <i class="fas fa-sign-out-alt"></i>
+              <input type="submit" value="Logout"
+                class="btn btn-sm btn-primary border-0 text-dark opac-70 font-italic font-weight-bold text-reg pl-0 pr-5">
             </form>
           </a>
-          
+
           {{else}}
-          
+
           <a class="nav-item nav-link" href="/login">
             <i class="fas fa-sign-in-alt"></i>
-            Login</a
-          >
+            Login</a>
           {{/if}}
         </div>
       </nav>
     </header>
 
     <main class="mini">
-      
+
       {{{ body }}}
-      
-      </main>
+
+    </main>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js">
+    </script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js">
+    </script>
   </body>
+
 </html>
