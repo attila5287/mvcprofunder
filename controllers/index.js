@@ -1,5 +1,5 @@
 const withAuth = require('../utils/auth');
-const path = require( 'path' );
+// const path = require( 'path' );
 const router = require('express').Router();
 const apiRoutes = require('./api');
 const { Project, User } = require('../models');

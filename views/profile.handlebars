@@ -15,7 +15,11 @@
   </a>
 </div>
 
+<hr class="border-primary border-med">
 {{#each user.projects as |pro|}}
+<button class="btn btn-danger btn-sm del-btn" type="button" id="user_project_{{pro.id}}">
+  Delete
+</button>
 <div class="container-fluid pt-4">
   <h1 class="title text-primary">
     <i class="fas fa-rocket text-dark bg-primary p-2 rounded-xl opac-50"></i>
@@ -105,3 +109,4 @@
 
 </div>
 {{/each}}
+
