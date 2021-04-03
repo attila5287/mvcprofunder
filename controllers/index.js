@@ -34,6 +34,18 @@ router.get( '/login', ( req, res ) => {
   res.render('login');
 });
 
+// Signup route
+router.get( '/signup', ( req, res ) => {
+  // console.log(res.session.logged_in);
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.logged_in) {
+    res.redirect('/');
+    return;
+  }
+  // Otherwise, render the 'login' template
+  res.render('signup');
+});
+
 router.get('/new_project', withAuth, (req, res) => {
   res.render('new_project',{ logged_in: req.session.logged_in, user_id: req.session.user_id,});
 });

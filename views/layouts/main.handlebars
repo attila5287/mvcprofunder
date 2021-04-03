@@ -63,6 +63,9 @@ a.badge:hover, a.badge:focus {
       font-size: 2rem;
     }
 
+    .rounded-circle {
+      border-radius: 50% 50% 50% 50%;
+    }
     .rounded-xl {
       border-radius: 0.5rem;
     }
@@ -107,8 +110,10 @@ a.badge:hover, a.badge:focus {
             </b>
           </a>
           <a class="nav-item nav-link" href="/">
-            <i class="fas fa-compass fa-spin"></i>
-            Explore</a>
+            <i class="fas fa-compass fa-spin rounded-circle text-2xl"></i>
+            Explore
+          </a>
+
           {{#if logged_in}}
           <a class="nav-item nav-link disabled text-info font-weight-bold text-reg font-italic ml-5">
             <i class="fas fa-robot text-xl"></i>
@@ -135,9 +140,20 @@ a.badge:hover, a.badge:focus {
           </a>
 
           {{else}}
+          <a class="nav-item nav-link disabled text-info font-weight-bold text-reg font-italic ml-5">
+            <i class="fas fa-robot text-xl"></i>
+             Welcome,  
+             <span class="text-xl">
+                Guest!</span>
+            Join us for user features:
+            <i class="fas fa-lock"></i>
+            </a>
           <a class="nav-item nav-link" href="/login">
             <i class="fas fa-sign-in-alt"></i>
             Login</a>
+          <a class="nav-item nav-link" href="/signup">
+            <i class="fas fa-user-plus"></i>
+            Signup</a>
           <a class="nav-item nav-link disabled">
             <i class="fas fa-lock"></i>
             Profile</a>
