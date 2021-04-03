@@ -18,19 +18,21 @@ router.get('/', async (req, res) => {
   const all = proData.map((p) => p.get({ plain: true }));
   // We render the template, 'all', passing in dishes, a new array of serialized objects.
   // res.status(200).json(all);
-  res.render('all', { all, loggedIn: req.session.loggedIn, });
+  res.render('all', { all, logged_in: req.session.logged_in, });
 });
 
 
-router.get('/login', (req, res) => {
-  if (req.session.loggedIn) {
+// Login route
+router.get( '/login', ( req, res ) => {
+  // console.log(res.session.logged_in);
+  // If the user is already logged in, redirect to the homepage
+  if (req.session.logged_in) {
     res.redirect('/');
     return;
   }
-
+  // Otherwise, render the 'login' template
   res.render('login');
 });
-
 
 router.get('/newproject', (req, res) => {
   res.render('newproject');
