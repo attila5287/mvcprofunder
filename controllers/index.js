@@ -30,12 +30,13 @@ router.get( '/login', ( req, res ) => {
     res.redirect('/');
     return;
   }
+  h
   // Otherwise, render the 'login' template
   res.render('login');
 });
 
-router.get('/newproject', (req, res) => {
-  res.render('newproject');
+router.get('/new_project', (req, res) => {
+  res.render('new_project');
 });
 
 

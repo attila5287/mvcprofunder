@@ -9,8 +9,7 @@ router.post('/', async (req, res) => {
     });
 
     // res.status( 200 ).json( newProject );
-    const id = newProject.id;
-    res.redirect('/project/' + id );
+    res.redirect('/');
   } catch (err) {
     res.status(400).json(err);
   }
