@@ -17,6 +17,9 @@ const signupFormHandler = async (event) => {
       document.location.replace('/');
       console.log('\n >> RESPONSE OK \n');
       alert('Refresh the page to unlock user features!');
+
+      document.getElementById( 'signup_success' ).classList.remove( 'd-none' );
+      document.getElementById( 'signup_success' ).classList.add( 'show' );
     } else {
       alert('Failed to sign up.');
     }

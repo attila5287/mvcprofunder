@@ -14,7 +14,12 @@ const loginFormHandler = async (event) => {
     if (response.ok) {
       console.log('\n >> RESPONSE OK \n');
       document.location.replace('/');
-      alert('Refresh the page to unlock user features!');
+      
+      alert( 'Refresh the page to unlock user features!' );
+      
+      document.getElementById( 'login_success' ).classList.remove( 'd-none' );
+      document.getElementById( 'login_success' ).classList.add( 'show' );
+
     } else {
       alert('Failed to log in.');
     }
