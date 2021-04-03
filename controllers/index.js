@@ -39,9 +39,10 @@ router.get('/new_project', withAuth, (req, res) => {
 });
 
 router.get('/projects/:id', withAuth, async (req, res) => {
-  const pro = await Project.findByPk( req.params.id, { include: { all: true } } ).catch(e=>console.log(e))
+  const pro_model = await Project.findByPk( req.params.id, { include: { all: true } } ).catch(e=>console.log(e))
   // res.json( pro.get( { plain: true } ) );
 
+  const pro = pro_model.get( { plain: true } )
   res.render('project', {pro, logged_in : req.session.logged_in, user_id : req.session.user_id})
 
 });

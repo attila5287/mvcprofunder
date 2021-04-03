@@ -1,3 +1,12 @@
+<style>
+  .fa-donate {
+    font-size: 2rem;
+  }
+
+  .icona {
+    font-size: 2rem;
+  }
+</style>
 <blockquote class="blockquote">
   <p class="text-reg text-secondary text-center font-italic mb-0">
     <i class="text-xl fas fa-cog fa-spin"></i>
@@ -5,14 +14,14 @@
   </p>
 </blockquote>
 <div class="container-fluid pt-4">
+  <h5 class="my-4 font-italic text-center text-secondary opac-70">
+    <i class="icona fas fa-calendar-check text-xl"></i>
+    Created at {{format_date pro.date_created}}</h5>
   <h1 class="title text-primary">
     <i class="fas fa-rocket text-dark bg-primary p-2 rounded-xl opac-50"></i>
     <u>
-    {{pro.name}}
+      {{pro.name}}
     </u>
-    <span class="mt-4 float-right font-italic text-reg text-secondary opac-70">
-    <i class="fas fa-calendar-check text-xl"></i>
-        Created at {{format_date pro.date_created}}</span>
   </h1>
   <p class="font-italic text-secondary text-lg my-4 mr-5">
     <i class="fas fa-quote-left text-2xl fa-pull-left text-primary opac-70"></i>
@@ -20,44 +29,29 @@
     <i class="fas fa-quote-right text-2xl fa-pull-right text-primary opac-70"></i>
   </p>
   <div class="progress bg-secondary p-0 my-4">
-  <div
-    class="progress-bar progress-bar-striped progress-bar-animated"
-    style="width:
-      {{calculate_progress pro.needed_funding pro.collected_funding}}%"
-    role="progressbar"
-    aria-valuenow="{{calculate_progress pro.needed_funding pro.collected_funding
-      }}"
-    aria-valuemin="0"
-    aria-valuemax="100"
-  >
-    <div class="ml-1 text-reg text-dark text-center">
-      <b>
-        {{calculate_progress pro.needed_funding pro.collected_funding}}%
-      </b>
+    <div class="progress-bar progress-bar-striped progress-bar-animated" style="width:
+      {{calculate_progress pro.needed_funding pro.collected_funding}}%" role="progressbar"
+      aria-valuenow="{{calculate_progress pro.needed_funding pro.collected_funding
+      }}" aria-valuemin="0" aria-valuemax="100">
+      <div class="ml-1 text-reg text-dark text-center">
+        <b>
+          {{calculate_progress pro.needed_funding pro.collected_funding}}%
+        </b>
+      </div>
     </div>
   </div>
-</div>
-  <button
-    class="btn btn-outline-success border-0 btn-block opac-70 mb-4"
-    data-target="#pro_fund{{pro.id}}"
-    data-toggle="collapse"
-    aria-expanded="false"
-    aria-controls="pro_fund{{pro.id}}"
-  >
-    <i class="fas fa-chevron-down"></i>
-    Show/Hide Funding Info
-  </button>
-  <div id="pro_fund{{pro.id}}" class="collapse">
+  <hr class="border-success my-4">
+  <div id="pro_fund{{pro.id}}" class="my-2">
     <div class="d-flex flex-row justify-content-around text-success my-4">
       <span>
-        <i class="fas fa-money-check-alt text-xl"></i>
+        <i class="icona fas fa-money-check-alt text-xl"></i>
         <i class="text-secondary">
           Needed:
           {{format_amount pro.needed_funding}}
         </i>
       </span>
       <span>
-        <i class="fas fa-hand-holding-usd text-xl"></i>
+        <i class="icona fas fa-hand-holding-usd text-xl"></i>
         <i class="text-secondary">
           Collected:
           {{format_amount pro.collected_funding}}
@@ -88,26 +82,23 @@
       </button>
     </div>
   </div>
-  <button
-    class="btn btn-outline-info btn-block border-0 mb-4"
-    data-target="#pro_user{{pro.id}}"
-    data-toggle="collapse"
-    aria-expanded="false"
-    aria-controls="pro_user{{pro.id}}"
-  >
-    <i class="fas fa-chevron-down"></i>
-    Show/Hide Contact Info
-  </button>
-  <div id="pro_user{{pro.id}}" class="collapse">
-    <h1 class="text-info">
-      <i class="fas fa-address-book"></i>
+
+  <hr class="border-info my-4">
+
+  <div id="pro_user{{pro.id}}" class="my-2">
+    <h1 class="text-info mb-4 text-center">
+      <i class="title text-xl fas fa-address-book"></i>
       {{pro.user.name}}
     </h1>
-    <a class="text-secondary text-lg">
-      <i class="far fa-envelope text-xl mr-3"></i>
-      {{pro.user.email}}
-    </a>
+    <div class="text-center ">
+      <a class="text-secondary text-lg my-4">
+        <i class="far fa-envelope text-xl mr-3"></i>
+        {{pro.user.email}}
+      </a>
+
+    </div>
   </div>
+
   <hr class="my-4 border-dark border-med" />
 
 </div>
