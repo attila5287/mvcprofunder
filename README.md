@@ -93,3 +93,14 @@ In this mini-project, you will work with a group to build a full-stack crowdfund
 If you have completed this activity, work through the following challenge with your partner to further your knowledge:
 
 * Add an `/edit/:id` route for logged in users to update their projects' details. Then deploy the app to Heroku!
+
+
+| ![dev]( https://raw.githubusercontent.com/attila5287/img_readme/main/all/dev.jpg "dev-icon") | About Developer | 
+| -------------   | -------------: |
+| Repos | [github.com/attila5287 ](https://github.com/attila5287/) |
+| Profile | [ attila5287.github.io ](https:///attila5287.github.io/) |
+| Email    |  atiturkoz@hotmail.com | 
+
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) 
+
